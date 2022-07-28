@@ -1,14 +1,22 @@
 import { StatusBar } from "expo-status-bar"
+import { useState } from "react"
 import { StyleSheet, Text, View } from "react-native"
 import { TextInputElement } from "./src/components/TextInputElement"
 
 export default function App() {
+  const [inputText, setInputText] = useState("")
+  console.log(inputText)
+
+  function handleChange(text: string) {
+    setInputText(text)
+  }
+
   return (
     <View style={styles.container}>
-      <View style={styles.input}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <View style={{ paddingTop: 20 }}>
-          <TextInputElement />
+      <View style={styles.inputContainer}>
+        <Text style={styles.text}>Meu primeiro aplicativo</Text>
+        <View style={styles.input}>
+          <TextInputElement text={inputText} handleChange={handleChange} />
         </View>
       </View>
 
@@ -24,8 +32,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  input: {
+  inputContainer: {
     padding: 50,
     paddingTop: 300,
+  },
+  input: {
+    paddingTop: 20,
+  },
+
+  text: {
+    fontSize: 20,
+    color: "#fff",
   },
 })
