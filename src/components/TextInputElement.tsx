@@ -1,18 +1,24 @@
-import React, { useState } from "react"
-import { View } from "react-native"
-import { TextInput } from "react-native-paper"
+import React, { useState } from 'react'
+import { View, TextInput } from 'react-native'
 
 interface Props {
-  text: string
-  handleChange: (value: string) => void
+  value: string
+  handleChange: (text: string) => void
+  style: {
+    backgroundColor: string
+    width: string
+    height: number
+  }
+  placeholder: string
 }
 
 export const TextInputElement: React.FC<Props> = (props) => {
   return (
     <View>
       <TextInput
-        label={"TextInput"}
-        value={props.text}
+        placeholder={props.placeholder}
+        style={props.style}
+        value={props.value}
         onChangeText={(text) => props.handleChange(text)}
       ></TextInput>
     </View>
