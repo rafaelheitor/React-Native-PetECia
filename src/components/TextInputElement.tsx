@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, TextInput } from 'react-native'
+import { View, TextInput, KeyboardType } from 'react-native'
 
 interface Props {
   value: string
@@ -10,13 +10,19 @@ interface Props {
     height: number
   }
   placeholder: string
+  type?: KeyboardType | undefined
+  secureTextEntry?: boolean
 }
 
 export const TextInputElement: React.FC<Props> = (props) => {
+  props.secureTextEntry = false
+
   return (
     <View>
       <TextInput
         placeholder={props.placeholder}
+        secureTextEntry={props.secureTextEntry}
+        keyboardType={props.type}
         style={props.style}
         value={props.value}
         onChangeText={(text) => props.handleChange(text)}

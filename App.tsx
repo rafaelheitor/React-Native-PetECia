@@ -1,5 +1,5 @@
-import { Home } from './src/Views/Home'
+import { SignUp } from './src/Views/SignUp'
 
 export default function App() {
-  return <Home />
+  return <SignUp />
 }
