@@ -1,7 +1,8 @@
-import { StatusBar } from 'expo-status-bar'
-import { useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { TextInputElement } from '../../components/TextInputElement'
+import { StatusBar } from "expo-status-bar"
+import { useState } from "react"
+import { StyleSheet, Text, View } from "react-native"
+import { AppButton } from "../../components/AppButton"
+import { TextInputElement } from "../../components/TextInputElement"
 
 interface Cadastro {
   nome: string
@@ -12,10 +13,10 @@ interface Cadastro {
 
 export const SignUp = () => {
   const [dadosCadastro, setDadosCadastro] = useState<Cadastro>({
-    nome: '',
-    email: '',
-    telefone: '',
-    senha: '',
+    nome: "",
+    email: "",
+    telefone: "",
+    senha: "",
   })
 
   function handleChangeNome(text: string) {
@@ -40,27 +41,27 @@ export const SignUp = () => {
       <View style={styles.inputContainer}>
         <View style={styles.input}>
           <TextInputElement
-            placeholder="Digite seu nome"
+            placeholder='Digite seu nome'
             style={styles.intupComponent}
             value={dadosCadastro.nome}
             handleChange={handleChangeNome}
           />
           <TextInputElement
-            placeholder="Digite seu Email"
-            type="email-address"
+            placeholder='Digite seu Email'
+            type='email-address'
             style={styles.intupComponent}
             value={dadosCadastro.email}
             handleChange={handleChangeEmail}
           />
           <TextInputElement
-            placeholder="Digite seu telefone"
-            type="phone-pad"
+            placeholder='Digite seu telefone'
+            type='phone-pad'
             style={styles.intupComponent}
             value={dadosCadastro.telefone}
             handleChange={handleChangeTelefone}
           />
           <TextInputElement
-            placeholder="Digite sua senha"
+            placeholder='Digite sua senha'
             secureTextEntry
             style={styles.intupComponent}
             value={dadosCadastro.senha}
@@ -68,8 +69,9 @@ export const SignUp = () => {
           />
         </View>
       </View>
+      <AppButton title='Registro' onPress={() => console.log("Tapped")} />
 
-      <StatusBar style="auto" />
+      <StatusBar style='auto' />
     </View>
   )
 }
@@ -77,30 +79,30 @@ export const SignUp = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#A52A2A',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#A52A2A",
+    alignItems: "center",
+    justifyContent: "center",
   },
   inputContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   input: {
     flex: 0.9,
     paddingTop: 20,
   },
-  addSubject: { marginLeft: 10, alignSelf: 'center' },
+  addSubject: { marginLeft: 10, alignSelf: "center" },
   intupComponent: {
-    backgroundColor: '#fff',
-    width: '100%',
+    backgroundColor: "#fff",
+    width: "100%",
     height: 45,
     marginTop: 30,
   },
   text: {
     fontSize: 20,
-    color: '#fff',
+    color: "#fff",
   },
   nomesContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
 })

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { View, TextInput, KeyboardType } from 'react-native'
+import React, { useState } from "react"
+import { View, TextInput, KeyboardType } from "react-native"
 
 interface Props {
   value: string
@@ -26,7 +26,7 @@ export const TextInputElement: React.FC<Props> = (props) => {
         style={props.style}
         value={props.value}
         onChangeText={(text) => props.handleChange(text)}
-      ></TextInput>
+      />
     </View>
   )
 }
